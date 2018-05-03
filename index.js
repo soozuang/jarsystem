@@ -43,7 +43,8 @@ app.get('/', function (req, res) {
     res.render('home', {
         content: 'some contents',
         jars: jars,
-        javhd: javhd
+        javhd: javhd,
+        hometown: hometown
     })
 });
 
