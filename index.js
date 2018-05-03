@@ -42,7 +42,8 @@ var jars = [
 app.get('/', function (req, res) {
     res.render('home', {
         content: 'some contents',
-        jars: jars
+        jars: jars,
+        jav: jav
     })
 });
 
