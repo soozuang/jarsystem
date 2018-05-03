@@ -1,0 +1,46 @@
+<style>
+    div>* {
+        display: inline;
+        vertical-align: middle
+    }
+
+    div>img {
+        margin: 10px;
+    }
+
+    div>p {
+        font-size: 18px;
+        font-weight: 500;
+    }
+</style>
+
+<h1 style="text-align: center; margin: 40px"> Wellcome to JARS System </h1>
+
+<ul style="text-align: center; font-size: 20px;">
+    Input your salary: 
+    <input id="input" type="number" name="salary" value="">
+    <input type="submit" value="Submit" onclick="foo()">
+
+</ul>
+
+<ul style="margin-left: 140px">
+    {{#each jars}}
+    <div>
+        <img src="images/orig.png" width="50">
+        <p>{{this.name}}</p>
+        <p class="percent" id="{{this.value}}">({{this.value}} %)</p>
+    </div>
+    {{/each}}
+</ul>
+
+
+<script>
+    function foo() {
+        var money = document.getElementById("input").value;
+        var arr = document.getElementsByClassName("percent");
+
+        for (i = 0; i < arr.length; i++) {
+            arr[i].innerHTML = " ~ " + arr[i].id * money / 100 + " $"
+        }
+    }
+</script>
